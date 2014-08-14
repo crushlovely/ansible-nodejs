@@ -1,7 +1,7 @@
-# Ansible Role For A Base Linux System
+# Ansible Role For Node.js
 
-[![Build Status](http://img.shields.io/travis/crushlovely/ansible-linux-base.svg?style=flat)](https://travis-ci.org/crushlovely/ansible-linux-base)
-[![Current Version](http://img.shields.io/github/release/crushlovely/ansible-linux-base.svg?style=flat)](https://galaxy.ansible.com/list#/roles/1180)
+[![Build Status](http://img.shields.io/travis/crushlovely/ansible-deploy-user.svg?style=flat)](https://travis-ci.org/crushlovely/ansible-deploy-user)
+[![Current Version](http://img.shields.io/github/release/crushlovely/ansible-deploy-user.svg?style=flat)](https://galaxy.ansible.com/list#/roles/1180)
 
 This Ansible role that installs `nodejs` and `npm`.  After it installs node and npm it will clear npm cache then globally installs Grunt CLI and Bower.
 
