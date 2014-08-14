@@ -4,6 +4,7 @@
   vars:
     - node_version: 0.10.15
     - npm_version: 1.4.4
+  roles:
+    - {roles: crushlovely.deploy-user}
   tasks:
-    - include: 'crushlovely.deploy-user'
     - include: 'tasks/main.yml'
