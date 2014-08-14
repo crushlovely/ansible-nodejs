@@ -1,5 +1,7 @@
 - hosts: all
   vars_files:
     - 'vars/main.yml'
+    - node_version: 0.10.15
+    - npm_version: 1.4.4
   tasks:
     - include: 'tasks/main.yml'
