@@ -5,12 +5,12 @@
 
 This Ansible role that installs `nodejs` and `npm`.  After it installs node and npm it will clear npm cache then globally installs Grunt CLI and Bower.
 
-We use this as the base image for all our Ruby and Node.js applications.
+We use this to install Node when required.
 
 ## Installation
 
 ``` bash
-$ ansible-galaxy install crushlovely.nginx
+$ ansible-galaxy install crushlovely.nodjs
 ```
 
 ## Variables
