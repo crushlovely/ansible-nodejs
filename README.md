@@ -36,7 +36,7 @@ Once this role is installed on your system, include it in the roles list of your
 
 ## Dependencies
 
-None
+This role requires there to be a `deploy` user with sudo capabilities.  [Click here to view our users role](https://galaxy.ansible.com/list#/roles/1337)
 
 ## License
 
