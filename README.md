@@ -10,7 +10,7 @@ We use this to install Node when required.
 ## Installation
 
 ``` bash
-$ ansible-galaxy install crushlovely.nodjs
+$ ansible-galaxy install crushlovely.nodejs
 ```
 
 ## Variables
