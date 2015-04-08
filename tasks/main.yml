@@ -1,44 +1,44 @@
 ---
 - name: Checking installed version of node.js
-  shell: /usr/bin/test `node -v` = v{{ node_version }} && echo True
+  shell: /usr/bin/test `node -v` = v{{ node.version }} && echo True
   register: node
   ignore_errors: yes
 
 - name: Checking installed version of NPM
-  shell: /usr/bin/test `npm -v` = {{ npm_version }} && echo True
+  shell: /usr/bin/test `npm -v` = {{ npm.version }} && echo True
   register: npm
   ignore_errors: yes
 
 - name: Fetching node.js source
-  action: get_url url=http://nodejs.org/dist/v{{ node_version }}/{{ node_tarball }} dest=/tmp/
+  get_url: url="http://nodejs.org/dist/v{{ node.version }}/node-v{{ node.version }}.tar.gz" dest=/tmp/
   when: node|failed
 
 - name: Unpack node.js tarball
-  shell: /bin/tar xvfz {{ node_tarball }} chdir=/tmp/
+  unarchive: src=/tmp/node-v{{ node.version }}.tar.gz dest=/tmp/
   when: node|failed
 
 - name: Take Ownership of Node Folder
-  shell: /bin/chown -hR deploy:deploy  /tmp/{{ node_prefix }}
+  file: path=/tmp/node-v{{ node.version }} owner={{ node.user }} group={{ node.group }}
   sudo: yes
   when: node|failed
 
 - name: Configure
-  shell: chdir=/tmp/{{ node_prefix }} ./configure
+  shell: ./configure chdir=/tmp/node-v{{ node.version }}
   sudo: yes
   when: node|failed
 
 - name: Make
-  shell: chdir=/tmp/{{ node_prefix }} /usr/bin/make
+  shell: chdir=/tmp/node-v{{ node.version }} /usr/bin/make
   sudo: yes
   when: node|failed
 
 - name: Make install
-  shell: /usr/bin/make install chdir=/tmp/{{ node_prefix }}/
+  shell: /usr/bin/make install chdir=/tmp/node-v{{ node.version }}/
   sudo: yes
   when: node|failed
 
 - name: Update npm
-  shell: npm install npm@{{ npm_version }} -g
+  shell: npm install npm@{{ npm.version }} -g
   sudo: yes
   when: npm|failed
 
