@@ -2,6 +2,7 @@
 node:
   version: 0.10.15
   path: /usr/local
+app:
   user: ubuntu
   group: ubuntu
 npm:
