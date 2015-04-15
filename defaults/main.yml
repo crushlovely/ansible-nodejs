@@ -1,0 +1,8 @@
+---
+node:
+  version: 0.10.15
+  path: /usr/local
+  user: ubuntu
+  group: ubuntu
+npm:
+  version: 1.4.4
