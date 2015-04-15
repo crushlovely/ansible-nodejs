@@ -18,7 +18,7 @@
   when: node|failed
 
 - name: Take Ownership of Node Folder
-  file: path=/tmp/node-v{{ node.version }} owner={{ node.user }} group={{ node.group }}
+  file: path=/tmp/node-v{{ node.version }} owner={{ app.user }} group={{ app.group }}
   sudo: yes
   when: node|failed
 
