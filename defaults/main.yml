@@ -1,9 +1,5 @@
 ---
-node:
-  version: 0.10.15
-  path: /usr/local
-app:
-  user: ubuntu
-  group: ubuntu
-npm:
-  version: 1.4.4
+node_version: 0.10.15
+app_user: ubuntu
+app_group: ubuntu
+npm_version: 1.4.4
